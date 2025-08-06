@@ -8,7 +8,6 @@ import bcrypt from "bcrypt"
 import passport from "passport";
 import { Strategy as localStrategy } from "passport-local";
 
-
 const app = express();
 const port = 3000;
 const saltround = 10;
@@ -63,7 +62,6 @@ app.post("/login",passport.authenticate("local",{
 
 
 
-
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
@@ -109,9 +107,6 @@ app.get("/secrets", (req, res) => {
   // console.log(req.user) => can access user data from login  
   res.render("secrets.ejs");
 })
-
-
-
 
 
 app.listen(port, () => {
